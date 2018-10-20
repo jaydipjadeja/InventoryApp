@@ -45,21 +45,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
-        android:text="IN STOCK :"
+        android:text="IN STOCK : "
         android:layout_toLeftOf="@+id/button_stock"
         android:layout_centerInParent="true"
-        android:padding="@dimen/activity_margin"
         android:textAppearance="?android:textAppearanceSmall"
         android:textColor="#AEB6BD"  />
 
     <Button
         android:id="@+id/button_stock"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentRight="true"
         android:layout_centerInParent="true"
-        android:padding="@dimen/activity_margin"
-        android:textColor="@android:color/black"
-        android:background="@drawable/button_circle" />
+        android:focusable="false"
+        android:textColor="@android:color/black" />
 
 </RelativeLayout>

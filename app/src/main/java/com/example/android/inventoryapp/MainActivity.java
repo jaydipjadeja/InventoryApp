@@ -46,14 +46,14 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             }
         });
 
-        // Find the ListView which will be populated with the pet data
-        final ListView productListView = (ListView) findViewById(R.id.list);
+        // Find the ListView which will be populated with the product data
+        ListView productListView = (ListView) findViewById(R.id.list);
 
         // Find and set empty view on the ListView, so that it only shows when the list has 0 items.
         View emptyView = findViewById(R.id.empty_view);
         productListView.setEmptyView(emptyView);
 
-        // Setup an Adapter to create a list item for each row of pet data in the Cursor.
+        // Setup an Adapter to create a list item for each row of product data in the Cursor.
         // There is no pet data yet (until the loader finishes) so pass in null for the Cursor.
         mCursorAdapter = new ProductCursorAdapter(this, null);
         productListView.setAdapter(mCursorAdapter);
@@ -61,15 +61,15 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         // Setup the item click listener
         productListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Create new intent to go to {@link EditorActivity}
                 Intent intent = new Intent(MainActivity.this, EditorActivity.class);
 
                 // Form the content URI that represents the specific pet that was clicked on,
                 // by appending the "id" (passed as input to this method) onto the
-                // {@link PetEntry#CONTENT_URI}.
-                // For example, the URI would be "content://com.example.android.pets/pets/2"
-                // if the pet with ID 2 was clicked on.
+                // {@link ProductEntry#CONTENT_URI}.
+                // For example, the URI would be "content://com.example.android.inventoryapp/inventory/2"
+                // if the product with ID 2 was clicked on.
                 Uri currentProductUri = ContentUris.withAppendedId(ProductEntry.CONTENT_URI, id);
 
                 // Set the URI on the data field of the intent
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
      */
     private void insertProduct() {
         // Create a ContentValues object where column names are the keys,
-        // and Toto's pet attributes are the values.
+        // and IPhone's product attributes are the values.
         Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.empty_product);
         byte[] image = ImageCapture.getBytes(icon);
         ContentValues values = new ContentValues();
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         // Use the {@link PetEntry#CONTENT_URI} to indicate that we want to insert
         // into the pets database table.
         // Receive the new content URI that will allow us to access Toto's data in the future.
-        Uri newUri = getContentResolver().insert(ProductEntry.CONTENT_URI, values);
+        getContentResolver().insert(ProductEntry.CONTENT_URI, values);
     }
 
     /**
@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        // Update {@link PetCursorAdapter} with this new cursor containing updated pet data
+        // Update {@link PetCursorAdapter} with this new cursor containing updated product data
         mCursorAdapter.swapCursor(data);
     }
 

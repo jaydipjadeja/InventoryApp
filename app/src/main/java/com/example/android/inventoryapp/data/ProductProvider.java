@@ -131,7 +131,7 @@ public class ProductProvider extends ContentProvider {
         }
 
         // Check that the type is valid
-        Integer type = values.getAsInteger(ProductEntry.COLUMN_PRODUCT_TYPE);
+        String type = values.getAsString(ProductEntry.COLUMN_PRODUCT_TYPE);
         if (type == null) {
             throw new IllegalArgumentException("Product requires valid type");
         }
@@ -155,8 +155,8 @@ public class ProductProvider extends ContentProvider {
         }
 
         // Check that the supplier phone is not null
-        Integer supplierPhone = values.getAsInteger(ProductEntry.COLUMN_PRODUCT_SUPP_PHONE);
-        if (supplierPhone != null) {
+        String supplierPhone = values.getAsString(ProductEntry.COLUMN_PRODUCT_SUPP_PHONE);
+        if (supplierPhone == null) {
             throw new IllegalArgumentException("Product requires valid supplier phone");
         }
 

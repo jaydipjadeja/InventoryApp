@@ -34,7 +34,7 @@ import com.example.android.inventoryapp.data.ProductContract.ProductEntry;
 public class EditorActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     /** Identifier for the product data loader */
-    private static final int EXISTING_PRODUCT_LOADER = 0;
+    private static final int EXISTING_PRODUCT_LOADER = 1;
     public static final int REQUEST_IMAGE_CAPTURE = 1;
 
     /** Content URI for the existing product (null if it's a new product) */

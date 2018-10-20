@@ -103,7 +103,7 @@ public final class ProductContract {
          *
          * Type: INTEGER
          */
-        public final static String COLUMN_PRODUCT_SUPP_PHONE = "supp.phone";
+        public final static String COLUMN_PRODUCT_SUPP_PHONE = "supp_phone";
 
         /**
          * Image of the product.

@@ -110,9 +110,9 @@ public class ProductCursorAdapter extends CursorAdapter {
         }
 
 
-        // Update the TextViews with the attributes for the current pet
+        // Update the TextViews with the attributes for the current product
         nameTextView.setText(productName);
-        priceTextView.setText(productPrice);
-        quantityButton.setText(newQuantity);
+        priceTextView.setText("$"+productPrice);
+        quantityButton.setText(String.valueOf(newQuantity));
     }
 }

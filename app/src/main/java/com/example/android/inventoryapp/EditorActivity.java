@@ -20,12 +20,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.android.inventoryapp.data.ImageCapture;
@@ -60,9 +57,6 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
 
     /** ImageView field to show the product's Image */
     private ImageView mProductImageView;
-
-    /** Button field to take the product's Image */
-    private Button mChangeImageButton;
 
     /** Button field to order the product */
     private Button mOrderButton;
@@ -118,7 +112,6 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         mQuantityEditText = (EditText) findViewById(R.id.edit_product_quantity);
         mSupplierEditText = (EditText) findViewById(R.id.edit_product_supplier);
         mSupplierPhoneEditText = (EditText) findViewById(R.id.edit_product_supp_number);
-        mChangeImageButton = (Button) findViewById(R.id.button_change_image);
         mProductImageView = (ImageView) findViewById(R.id.no_image);
         mOrderButton = (Button) findViewById(R.id.button_order);
 
@@ -132,12 +125,11 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         mQuantityEditText.setOnTouchListener(mTouchListener);
         mSupplierEditText.setOnTouchListener(mTouchListener);
         mSupplierPhoneEditText.setOnTouchListener(mTouchListener);
-        mChangeImageButton.setOnTouchListener(mTouchListener);
         mProductImageView.setOnTouchListener(mTouchListener);
         mOrderButton.setOnTouchListener(mTouchListener);
 
 
-        mChangeImageButton.setOnClickListener(new View.OnClickListener() {
+        mProductImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -466,7 +458,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         builder.setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // User clicked the "Delete" button, so delete the product.
-                deletePet();
+                deleteProduct();
             }
         });
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
@@ -487,7 +479,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
     /**
      * Perform the deletion of the pet in the database.
      */
-    private void deletePet() {
+    private void deleteProduct() {
         if (mCurrentProductUri != null) {
             // Call the ContentResolver to delete the pet at the given content URI.
             // Pass in null for the selection and selection args because the mCurrentProductUri

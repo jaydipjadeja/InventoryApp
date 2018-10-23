@@ -4,6 +4,7 @@ import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -13,9 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CursorAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.inventoryapp.data.ImageCapture;
 import com.example.android.inventoryapp.data.ProductContract.ProductEntry;
 
 public class ProductCursorAdapter extends CursorAdapter {
@@ -63,15 +66,19 @@ public class ProductCursorAdapter extends CursorAdapter {
         TextView nameTextView = (TextView) view.findViewById(R.id.name);
         TextView priceTextView = (TextView) view.findViewById(R.id.price);
         Button quantityButton = (Button) view.findViewById(R.id.button_stock);
+        ImageView productImage = (ImageView) view.findViewById(R.id.no_image);
 
         // Find the columns of product attributes that we're interested in
         int nameColumnIndex = cursor.getColumnIndex(ProductEntry.COLUMN_PRODUCT_NAME);
         int priceColumnIndex = cursor.getColumnIndex(ProductEntry.COLUMN_PRODUCT_PRICE);
         int quantityColumnIndex = cursor.getColumnIndex(ProductEntry.COLUMN_PRODUCT_QUANTITY);
         int idColumnIndex = cursor.getColumnIndex(ProductEntry._ID);
+        int imageColumnIndex = cursor.getColumnIndex(ProductEntry.COLUMN_PRODUCT_IMAGE);
 
+        byte[] bitmap = cursor.getBlob(imageColumnIndex);
 
-        // Read the pet attributes from the Cursor for the current pet
+        // Read the product attributes from the Cursor for the current product
+        Bitmap image = ImageCapture.getImage(bitmap);
         String productName = cursor.getString(nameColumnIndex);
         String productPrice = cursor.getString(priceColumnIndex);
         final int productQuantity = cursor.getInt(quantityColumnIndex);
@@ -114,5 +121,6 @@ public class ProductCursorAdapter extends CursorAdapter {
         nameTextView.setText(productName);
         priceTextView.setText("$"+productPrice);
         quantityButton.setText(String.valueOf(newQuantity));
+        productImage.setImageBitmap(image);
     }
 }

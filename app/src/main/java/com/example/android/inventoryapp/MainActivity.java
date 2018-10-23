@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         values.put(ProductEntry.COLUMN_PRODUCT_NAME, "IphoneXR");
         values.put(ProductEntry.COLUMN_PRODUCT_TYPE, "Electronics");
         values.put(ProductEntry.COLUMN_PRODUCT_PRICE, 1200);
-        values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, 10);
+        values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, 20);
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER, "Apple Store");
         values.put(ProductEntry.COLUMN_PRODUCT_SUPP_PHONE, "1234567890");
 

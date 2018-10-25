@@ -6,6 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.text.TextUtils;
@@ -108,12 +109,14 @@ public class ProductCursorAdapter extends CursorAdapter {
             }
         });
 
+        GradientDrawable buttonShape = (GradientDrawable)quantityButton.getBackground();
+
         if (newQuantity == 0) {
-            quantityButton.setBackgroundColor(Color.RED);
+            buttonShape.setColor(Color.RED);
         } else if (newQuantity <= 15 && newQuantity >=1) {
-            quantityButton.setBackgroundColor(Color.parseColor("#FFBF00"));
+            buttonShape.setColor(Color.parseColor("#FFBF00"));
         } else {
-            quantityButton.setBackgroundColor(Color.GREEN);
+            buttonShape.setColor(Color.parseColor("#8bc34a"));
         }
 
 

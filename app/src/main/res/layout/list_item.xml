@@ -59,6 +59,7 @@
         android:layout_centerInParent="true"
         android:focusable="false"
         android:textColor="@android:color/black"
-        style="?android:attr/borderlessButtonStyle"/>
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/button_circle"/>
 
 </RelativeLayout>

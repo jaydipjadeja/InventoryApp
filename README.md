@@ -37,7 +37,7 @@ implementation 'com.android.support:design:28.0.0
 
 <img src="https://raw.githubusercontent.com/jaydipjadeja/InventoryApp/master/UX/home.png" width="200"/> <img src="https://raw.githubusercontent.com/jaydipjadeja/InventoryApp/master/UX/home_2.png" width="200"/> <img src="https://raw.githubusercontent.com/jaydipjadeja/InventoryApp/master/UX/add_product.png" width="200"/>
 
-<img src="https://raw.githubusercontent.com/jaydipjadeja/InventoryApp/master/UX/add_product_2.png" width="200"/> <img src="https://raw.githubusercontent.com/jaydipjadeja/UDTourGuide/master/InventoryApp/master/UX/edit_product.png" width="200"/> <img src="https://raw.githubusercontent.com/jaydipjadeja/UDTourGuide/master/InventoryApp/master/UX/edit_product_2.png" width="200"/>
+<img src="https://raw.githubusercontent.com/jaydipjadeja/InventoryApp/master/UX/add_product_2.png" width="200"/> <img src="https://raw.githubusercontent.com/jaydipjadeja/InventoryApp/master/UX/edit_product.png" width="200"/> <img src="https://raw.githubusercontent.com/jaydipjadeja/InventoryApp/master/UX/edit_product_2.png" width="200"/>
 
 ## PROJECT LICENSE
 ```

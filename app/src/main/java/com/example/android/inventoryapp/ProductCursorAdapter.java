@@ -114,7 +114,7 @@ public class ProductCursorAdapter extends CursorAdapter {
         if (newQuantity == 0) {
             buttonShape.setColor(Color.RED);
         } else if (newQuantity <= 15 && newQuantity >=1) {
-            buttonShape.setColor(Color.parseColor("#FFBF00"));
+            buttonShape.setColor(Color.parseColor("#ffee58"));
         } else {
             buttonShape.setColor(Color.parseColor("#8bc34a"));
         }

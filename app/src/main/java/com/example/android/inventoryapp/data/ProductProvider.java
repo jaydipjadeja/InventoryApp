@@ -255,8 +255,8 @@ public class ProductProvider extends ContentProvider {
         // check that the supplier phone value is valid.
         if (values.containsKey(ProductEntry.COLUMN_PRODUCT_SUPP_PHONE)) {
             // Check that the price is greater than or equal to $0
-            Integer supplierPhone = values.getAsInteger(ProductEntry.COLUMN_PRODUCT_SUPP_PHONE);
-            if (supplierPhone != null) {
+            String supplierPhone = values.getAsString(ProductEntry.COLUMN_PRODUCT_SUPP_PHONE);
+            if (supplierPhone == null) {
                 throw new IllegalArgumentException("Product requires valid supplier phone");
             }
         }

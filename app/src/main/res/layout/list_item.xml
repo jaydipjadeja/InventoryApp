@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
-        android:text="IN STOCK : "
+        android:text="@string/list_stock"
         android:layout_toLeftOf="@+id/button_stock"
         android:layout_centerInParent="true"
         android:textAppearance="?android:textAppearanceSmall"
@@ -58,6 +58,7 @@
         android:layout_alignParentRight="true"
         android:layout_centerInParent="true"
         android:focusable="false"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        style="?android:attr/borderlessButtonStyle"/>
 
 </RelativeLayout>

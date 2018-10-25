@@ -24,21 +24,12 @@
     android:padding="@dimen/activity_margin"
     tools:context=".EditorActivity">
 
-    <!-- Image of Product -->
-    <LinearLayout
+    <ImageView
+        android:id="@+id/no_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/no_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/empty_product"/>
-
-    </LinearLayout>
+        android:layout_height="330dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/image_coming_soon"/>
 
     <!-- Name category -->
     <LinearLayout
